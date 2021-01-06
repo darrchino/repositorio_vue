@@ -8,6 +8,18 @@
     <script src="../vue.js"></script>
 </head>
 <body>
-    <h1>Teste</h1>
+        
+    <div id="root">
+        <p>{{nome}}</p>
+
+    </div>
+    <script>
+        let root = new Vue({
+            el: "#root",
+            data: {
+                nome: "Voyane Rogerio"
+            }
+        })
+    </script>    
 </body>
 </html>
