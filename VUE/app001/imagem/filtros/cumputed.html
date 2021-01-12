@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed propriet</title>
+    <script src="../../../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+      <!--  <p>O meu nome e {{nomeCompleto1()}}</p>  metodo -->
+        <p>O meu nome e {{nomeCompleto2}}</p>  <!-- usa se o computed propriety por uma questao de eficiencia de randerizacao por parte do vue -->
+        <input v-model = "nome">
+    </div>
+    <script>
+        var root = new Vue({
+            el: "#root",
+            data: {
+                nome: "Voyane",
+                apelido: "Chirindzane"
+            },
+            methods: {
+                nomeCompleto1: function(){
+                    return this.nome  + " " + this.apelido
+                }
+            },
+            computed: {
+                nomeCompleto2: function(){
+                    return this.nome  + " " + this.apelido
+                }
+            }
+        });
+    </script>
+</body>
+</html>

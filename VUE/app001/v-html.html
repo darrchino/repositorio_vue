@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-HTML & V-TEXT</title>
+
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <span v-html="valor"></span>
+        <div>
+            <button @click="t1">Titulo 1</button>
+        </div>
+    </div>
+    <script>
+        root = new Vue({
+            el: "#root",
+            data:{
+                valor: '<h4> Titulo Vue </h4>'
+            }, 
+            methods: {
+                t1: function(){
+                    this.valor = '<h1> Titulo Vue </h1>'
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

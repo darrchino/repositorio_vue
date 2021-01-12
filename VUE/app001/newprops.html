@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <listafrutas :frutascomponent = frutas></listafrutas>
+    </div>
+    <script>
+        Vue.component("listafrutas", {
+            props: [
+                "frutascomponent"
+            ],
+
+            template:
+                `
+                    <ul>
+                        <li v-for="fruta in frutascomponent">{{fruta}}</li>
+                    </ul>
+
+                `
+
+        }),
+
+        root = new Vue({
+            el: "#root",
+            data: {
+                frutas: [
+                    "Laranjas",
+                    "Bananas",
+                    "Peras",
+                    "Mangas"
+            ]
+            }
+        })
+    </script>
+    
+</body>
+</html>

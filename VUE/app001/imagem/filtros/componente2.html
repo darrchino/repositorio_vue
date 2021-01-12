@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <componente-pai/>
+    </div>
+    <script>
+
+        Vue.component('componente-pai', {
+            template: `
+                <div>
+                    Este e o elemento do componente pai
+                    <componente-filho/>
+                </div>
+            `
+        })
+
+        Vue.component('componente-filho', {
+            template: `
+                <div>
+                    Este e o elemtento do template filho
+                </div>
+            `
+        })
+
+        var root = new Vue({
+            el: "#root",
+            component: [ 'componente-pai', 'componente-filho' ]
+        });
+    </script>
+</body>
+</html>

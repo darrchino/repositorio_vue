@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directiva V-FOR</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div>
+            <p v-for="nome in nomes">{{nome}}</p>
+        </div>
+        
+       <div>
+        <p v-for="cliente in clientes"> O cliente chama -se {{cliente.nome}} e tem {{cliente.idade}} anos.</p>
+       </div>
+    </div>
+
+    <script>
+        root = new Vue({
+            el: "#root",
+            data: {
+                
+                nomes: [
+                   "Voyane",
+                    "Dario", 
+                    "Rogerio"
+               ],
+
+                clientes: [
+                    {nome:"Voyane", idade: 30},
+                    {nome: "Dario", idade: 29},
+                    {nome: "Rogerio", idade: 59}
+                ]
+                
+            }
+
+        })
+    </script>
+</body>
+</html>

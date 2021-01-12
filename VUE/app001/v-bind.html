@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-BIND & V-ON</title>
+
+    <script src="../vue.js"></script>
+</head>
+<body>
+
+    <div id="root">
+        <h3> O logo selecionado e {{logo}}</h3>
+        <img v-bind:src="imagem" alt=""> </br>
+        <button v-on:click="mostrarVue">Vue</button>
+        <button v-on:click="mostrarGithub" >Github</button>
+    </div>
+     <script>
+         root = new Vue({
+             el: "#root",
+             data: {
+                 logo: '',
+                 imagem: ''
+             },
+             methods: {
+                 mostrarVue: function(){
+                     this.logo = 'Vue'
+                     this.imagem = 'imagem/vuejs.png'
+                 },
+                 mostrarGithub: function(){
+                     this.logo = 'Github'
+                     this.imagem = 'imagem/github.jpg'
+                 }
+             }
+
+         });
+     </script>
+    
+</body>
+</html>

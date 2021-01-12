@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directiva V-If</title>
+
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-if="visivel">
+            <h3>DIV 1</h3>
+        </div>
+
+        <div v-else>
+            <h3>DIV 2</h3>
+        </div>
+
+         <button v-on:click="mostrarEsconder"> CLICK</button>
+    </div>
+
+    <script>
+        app = new Vue({
+            el: "#app",
+            data: {
+                visivel: true
+            },
+            methods: {
+                mostrarEsconder: function(){
+                    this.visivel = !this.visivel
+                    console.log(this.visivel)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

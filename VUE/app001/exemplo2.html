@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <input v-model="novoNome">
+        <button @click="click">Click</button>
+
+        <div>
+            <h3>Lista de Nomes</h3>
+            <ul>
+                <li v-for="nome in nomes">{{nome}}</li>
+            </ul>
+            <h3>Total Nomes: {{totalNomes}} </h3>
+        </div>
+    </div>
+    <script>
+        root = new Vue({
+            el: "#root",
+            data: {
+                    nomes: [],
+                    novoNome: '',
+                    totalNomes: 0
+
+            },
+            methods: {
+                click: function(){
+                    this.nomes.push(this.novoNome)
+                    this.novoNome = ''
+                    this.totalNomes = this.nomes.length
+                }
+            },
+            //-----------------------------------
+            created: function(){
+                console.log("Criada")
+            },
+            //------------------------------------
+            mounted: function(){
+                console.log("Montada")
+            },
+            //------------------------------------
+            updated: function(){
+                console.log("Actualizada")
+            },
+            //--------------------------------
+            destroyed: function(){
+                console.log("Destruir")
+            }
+        })
+    </script>
+</body>
+</html>

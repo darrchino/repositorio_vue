@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes</title>
+    <script src="../../../vue.js"></script>
+</head>
+<body>
+    <dir id="root">
+        <novo />
+        
+    </dir> 
+    <script>
+         
+         Vue.component('novo', {
+                template: ` 
+                <div>
+                 <h1>Ola Mundo! </h1>
+                 <h1> Primeiro Componente </h1>
+                  </div>
+                `
+         })
+
+        var root = new Vue({
+            el: "#root",
+            component: [
+                'novo'
+            ]
+        });
+    </script>
+</body>
+</html>
